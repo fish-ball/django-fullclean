@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='django-fullclean',
     packages=['django_fullclean'],
-    version='0.0.4',
+    version='0.0.5',
     description='Force django model call full_clean before save.',
     author='Alfred Huang',
     author_email='57082212@qq.com',
