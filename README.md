@@ -70,15 +70,15 @@ keep the `full_clean` functionality the rest of the time, you can temporarily
 disconnect the `pre_save_full_clean_handler` signal:
 
 ```python
-from django.db.models.signals import post_save
+from django.db.models.signals import pre_save
 from django_fullclean import pre_save_full_clean_handler
 
 myobject = MyObject.get(id=1)
 myobject.name = "Monty"
 
-post_save.disconnect(pre_save_full_clean_handler)
+pre_save.disconnect(pre_save_full_clean_handler)
 myobject.save()
-post_save.connect(pre_save_full_clean_handler)
+pre_save.connect(pre_save_full_clean_handler)
 ```
 
 ## Author
