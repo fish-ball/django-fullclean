@@ -13,7 +13,17 @@ def pre_save_full_clean_handler(sender, instance, *args, **kwargs):
 
     whitelist = getattr(settings, 'FULLCLEAN_WHITELIST', [''])
 
-    allowed_by_whitelist = any([sender.__module__.startswith(s) for s in whitelist])
+    allowed_by_whitelist = False
+    
+    for item in whitelist:
+        if any([isinstance(item, list), isinstance(item, tuple)]):
+            if sender.__module__.startswith(item[0]) and sender.__name__ == item[1]:
+                allowed_by_whitelist = True
+                break
+        else:
+            if sender.__module__.startswith(item)
+                allowed_by_whitelist = True
+                break
 
     if sender != Session and allowed_by_whitelist:
         instance.full_clean()
