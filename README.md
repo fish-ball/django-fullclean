@@ -55,7 +55,7 @@ during model instance `save()`.
 In order to prevent problems, django-fullclean ignores the Session model. If you 
 are not using Django's built-in Session model, use the `FULLCLEAN_SESSION_MODEL` 
 setting to provide the correct model for django-fullclean to ignore. For instance, 
-if you are using the `user_session` package, you would add the following to your 
+if you are using the `user_sessions` package, you would add the following to your 
 settings.py file:
 
     FULLCLEAN_SESSION_MODEL = 'user_sessions.models.Session'
