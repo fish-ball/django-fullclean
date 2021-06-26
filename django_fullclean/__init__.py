@@ -21,7 +21,7 @@ def pre_save_full_clean_handler(sender, instance, *args, **kwargs):
                 allowed_by_whitelist = True
                 break
         else:
-            if sender.__module__.startswith(item)
+            if sender.__module__.startswith(item):
                 allowed_by_whitelist = True
                 break
 
