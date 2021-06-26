@@ -50,6 +50,16 @@ checking for incorrect cases which then throw `ValidationError`.
 Now you will properly get an error when the `clean()` checking does not pass 
 during model instance `save()`.
 
+## Session Model
+
+In order to prevent problems, django-fullclean ignores the Session model. If you 
+are not using Django's built-in Session model, use the `FULLCLEAN_SESSION_MODEL` 
+setting to provide the correct model for django-fullclean to ignore. For instance, 
+if you are using the `user_session` package, you would add the following to your 
+settings.py file:
+
+    FULLCLEAN_SESSION_MODEL = 'user_sessions.models.Session'
+
 ## Advanced Usage
 
 If there are specific apps or models you wish to exclude from processing, use the 
